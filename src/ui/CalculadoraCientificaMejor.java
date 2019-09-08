@@ -3,15 +3,18 @@ import java.lang.Math;
 public class CalculadoraCientificaMejor{
     static String []last10Values= new String [10];
     static String []last10Types= new String [10];
-    var 
-
-    public static void saveLastValue(String value, String tipe){
-        for (int i=10;i>0;i--){
-            last10Values[i]= last10Values[i-1];
-            last10Types[i]= last10Types[i-1];
+    static int position = -1;
+    public static void saveLastValue(String value, String type){
+        if(position == 9){
+            for (int i=0;i<9;i++){
+                last10Values[i]= last10Values[i+1];
+                last10Types[i]= last10Types[i+1];
+            }
+        }else {
+            position++;
         }
-        last10Values[0]= result;
-        last10Types[0]= newType;
+        last10Values[position]= value;
+        last10Types[position]= type;
     }
 
      /** 
@@ -24,10 +27,7 @@ public class CalculadoraCientificaMejor{
      */
     public static double sum(double number1, double number2){
         
-        
         double result = number1+number2;
-        last10Values[var]=result;
-        last10Types[var]="double";
         return result;
 
 
@@ -144,7 +144,7 @@ public class CalculadoraCientificaMejor{
         double result = 0;
         int power = l - 1;
         for(int i = 0;i < l;i++){
-         if(b.charAt(i) == '1'){
+         if("1".equals(b.charAt(i))){
           result += Math.pow(2,power);
         }
          power --;
@@ -199,29 +199,32 @@ public class CalculadoraCientificaMejor{
      public static double tan(double number1){
          return Math.tan(number1);
      }
-     
 
      public static void main( String [] Args){
       Scanner reader = new Scanner (System.in);
+      for(int x=0;x<=9;x++){
+         last10Values[x] = "";
+      }
       double result = 0;
-      double number1;
+      double number1 =0;
       double number2 =0;
-      String b;
+      boolean firtsTime =true;
       int basicoperation;
       int operationConvertion;
       String binarynumber;
       int decimal;
+      int position = 0;
+      String b;
       
       
       
       
 
-      System.out.println (" please enter the number 1 that you would like to use, in case you choose empowerment enter the base;");
-      number1= reader.nextDouble(); 
+      
         do{
          System.out.println ("what operation you would like to use; if you would like to finish enter number -1\n"+ 
          "1. sum \n" +
-		 "2. subtration\n" +
+		  "2. subtration\n" +
 		 "3. division\n" +
 		 "4. multiplication\n" +
 		 "5. module\n" +
@@ -233,21 +236,28 @@ public class CalculadoraCientificaMejor{
          "11. convertion of binary, decimal, hexadecimal\n" +
          "12. sin\n" +
          "13. cos\n" +
-         "14. tan\n");
+         "14. tan\n" +
+         "15. historyResults\n");
 
     
          basicoperation = reader.nextInt();
+         if(basicoperation != 11 && firtsTime) {
+             System.out.println (" please enter the number 1 that you would like to use, in case you choose empowerment enter the base;");
+             number1= reader.nextDouble(); 
+             firtsTime = false;
+         }
          if (basicoperation<8 && basicoperation != -1){
          System.out.println ("please enter the number 2 that you would like to use; in case you choose empowerment enter the exponen");
          number2= reader.nextDouble();
          }
          switch (basicoperation) {
             case 1:
-            result =sum(number1,number2);
+                result =sum(number1,number2);                
             break;
 
             case 2:
-            result =subtration(number1,number2); 
+                result =subtration(number1,number2); 
+                
             break; 
             
             case 3:
@@ -290,8 +300,8 @@ public class CalculadoraCientificaMejor{
                 case 1:
                 System.out.println ("please enter the binary number");
                 reader.nextLine();
-                number1 = reader.nextLine();
-                result = binaryToDecimal(number1);
+                binarynumber = reader.nextLine();
+                result = binaryToDecimal(binarynumber);
                 System.out.println ("the number in decimal is " + result);
                 break;
 
@@ -310,10 +320,36 @@ public class CalculadoraCientificaMejor{
             case 14:
             result= tan(number1);
             break;
+            case 15:
+            System.out.println("Por favor selecione el numero del historial ");
+            System.out.println("historial 1 " + last10Values[0]+"\n");
+            System.out.println("historial 2 " + last10Values[1]+"\n");
+            System.out.println("historial 3 " + last10Values[2]+"\n");
+            System.out.println("historial 4 " + last10Values[3]+"\n");
+            System.out.println("historial 5 " + last10Values[4]+"\n");
+            System.out.println("historial 6 " + last10Values[5]+"\n");
+            System.out.println("historial 7 " + last10Values[6]+"\n");
+            System.out.println("historial 8 " + last10Values[7]+"\n");
+            System.out.println("historial 9 " + last10Values[8]+"\n");
+            System.out.println("historial 10 " + last10Values[9]+"\n");
+            int opcion = reader.nextInt();
+            if(opcion>1 && opcion <=10){
+               switch(last10Types[opcion-1]){
+                  case "double":
+                  result = Double.parseDouble(last10Values[opcion-1]);
+                  break;
+                  case "string":
+                  binarynumber = last10Values[opcion-1];
+                  break;
+               }
+            }
+
+            break;
 
             default:
                 break;
         }
+        saveLastValue(Double.toString(result),"double");
          System.out.println(result);
          number1= result;
         }
