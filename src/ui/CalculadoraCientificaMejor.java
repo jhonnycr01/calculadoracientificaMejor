@@ -22,7 +22,7 @@ public class CalculadoraCientificaMejor{
      <b>pre:</b> the number1 that the user enter, must be !=null and decimal. <br>
      @param number1, this parameter must be a decimal.(number1 is double type)
      @param numbver2 this parameter must be a decimal.(number2 is double type)
-     <b>post:</b>number1 and number 2 have been added.
+     <b>post:</b>number1 and number 2 have been added. <b>
      @return this method returns the sum of two decimal numbers.
      */
     public static double sum(double number1, double number2){
@@ -39,41 +39,44 @@ public class CalculadoraCientificaMejor{
       <b>pre:</b> the number that the user enter, must be a decimal && != null. <b>
       @param number1, this parameter must be a decimal.
       @param numbe2, this parameter must be a decimal.
-      <b>post:/b>number1 and number2 have been substracted.
+      <b>post:/b>number1 and number2 have been substracted. <b>
       @return this method returns the substration of two decimal numbers.
       */
      public static double subtration(double number1, double number2){
-        return number1-number2;
+        double result = number1-number2;
+        return result;
      }
      /**
       *  this method allows you to divide number1 to number2.
      <b>pre:</b> the number that the user enter, must be a decimal && != null. <b>
      @param number1, this parameter must be a decimal.
      @param number2, this parameter must be a decimal.
-     <b>post:</b> number1 and number2 have been divided.
+     <b>post:</b> number1 and number2 have been divided. <b>
      @return this method returns the division of two decimal numbers.
       */
      public static double division(double number1,double number2){
-        return number1/number2;
+        double result= number1/number2;
+        return result;
      }
      /**
       *  this method allows you to multiply number1 to number2.
      <b>pre:</b> the number that the user enter, must be a decimal && != null. <b>
      @param number1, this parameter must be a decimal.
      @param number2, this parameter must be a decimal.
-     <b>post:</b> number1 and number2 have been divided.
+     <b>post:</b> number1 and number2 have been divided. <b>
      @return this method returns the division of two decimal numbers.
       */
      public static double multiplication(double number1, double number2){
-        return number1*number2;
+        double result= number1*number2;
+        return result;
      }
      /** 
       * this method allows you to get the module of number1 and number2.
       <b>pre:</b> the number that the user enter, must be a decimal && != null. <b>
       @param nunber1, this parameter must be a decimal.
       @param number2, this parameter must be a decimal.
-      <b>post:</b> number1 and number2 have been multiplicated
-      @return this methos returns the module of the two decimal numbers.
+      <b>post:</b> number1 and number2 have been multiplicated. <b>
+      @return this method returns the module of the two decimal numbers.
      */
      public static double module(double number1, double number2){
         return number1%number2;
@@ -82,8 +85,8 @@ public class CalculadoraCientificaMejor{
       * this method allows you to get the squareRoot of number1.
       <b>pre:</b> the number that the user enter, must be a decimal && != null. <b>
       @param number1, this parameter must be a decimal.
-      
-
+      <b>post:</b> you have get the square root of a number. <b>
+      @return this method returns the square root of a decimal number
       */
      public static double squareRoot(double number1){
         number1=0;
@@ -109,8 +112,8 @@ public class CalculadoraCientificaMejor{
      <b>pre:</b> the numbers that the user enter, must be a decimal && != null. <b>
      @param number1, this parameter must be a decimal.
      @param number2, this parameter must be a decimal.
-
-      * 
+     <b>post:</b> you have get the empowerment by using a base and the exponent of that same base <b>
+     @return this method returns the empowerment of a number by elevating to a exponent 
       */
      public static double empowerment(double number1, double number2) {
         double result = 1;
@@ -123,7 +126,8 @@ public class CalculadoraCientificaMejor{
       * this method allows you to get the factorial of a number.
       <b>pre:</b> the number that the user enter, must be a decimal && != null. <b>
       @param number1, this parameter must be a decimal.
-      
+      <b>post:</b> you have get the factorial of a number. <b>
+      @return this method returns the factorial of a numeber.
       */
      public static double factorial( double number1){
             if(number1 == 0) return 1;
@@ -155,6 +159,8 @@ public class CalculadoraCientificaMejor{
       * this method allows you to get the log10 of a number
       <b>pre:</b> the number that the user enter, must be a decimal && != null. <b>
       @param number1, this parameter must be a decimal.
+      <b>post:</b> you have get the log in base 10 0f a number. <b>
+      @return this method returns the log 10 of a number
       */
       
      public static double log10(double number1){
@@ -167,6 +173,8 @@ public class CalculadoraCientificaMejor{
       <b>pre:</b> the number that the user enter, must be a decimal && != null. <b>
       @param number1, this parameter must be a decimal.
       @param number2, this parameter must be a decimal.
+      <b>post:</b> you have get the root of a number by enter the number and the radical of the root
+      @ return this method returns the root of a number.
       */
      public static double root(double number1, double number2) {
      if (number1 < 0) {
@@ -178,28 +186,53 @@ public class CalculadoraCientificaMejor{
       * this method allows you to get the sinus of a number.
       <b>pre:</b> the number that the user enter, must be a decimal && != null. <b>
       @param number1, this parameter must be a decimal.
+      <b>post:</b> you have get the sinus of a number.
+      @return this method returns the sinus of a number 
       */
      
      public static double sin(double number1){
-         return Math.sin(number1);
+         double result= Math.sin(number1);
+         return result;
      }
      /**
       * this method allows you to get the cosine of a number.
       <b>pre:</b> the number that the user enter, must be a decimal && != null. <b>
       @param number1, this parameter must be a decimal.
+      <b>post:</b> you have get the cosine of a number. <b>
+      @return this method returns the cosine of a number.
       */
      public static double cos(double number1){
-         return Math.cos(number1);
-     }
+         double result= Math.cos(number1);
+         return result;
+      }
      /**
-      * this methos allows you to get the tanget of a numeber.
+      * this method allows you to get the tanget of a numeber.
       <b>pre:</b> the number that the user enter, must be a decimal && != null. <b>
-       @param number1, this 
+      @param number1, this parameter must be a decimal.
+      <b>post:</b> you have get the tanget of a number.
+      @return this method returns the tanget of a number
       */
      public static double tan(double number1){
-         return Math.tan(number1);
-     }
-
+          double result= Math.tan(number1);
+         return result;
+      }
+    /**
+     * this method shows a menu where the user can chose the operation that he would like to use, and it tells the user to enter the -1 if he would like to finish the operation, then depending of the basic operation that he choose the condition comes where if basic operation is diferent from 11 the program asks for the first number, then if the basic operation that he choose is less than 8 the program asks for the number2.
+     <b>pre:</b> the user must choose the operation && depending of the basic operation that he choose he has to enter number1 or number2. <b>
+     @param number1, this parameter must be a decimal.
+     @param number2, this paramater must be a decimal.
+     @param -1, this paramater must be enter if the user would like to finish
+     <b>post:</b> you have choose a basic operation and have get the result of it. <b>
+     @return this method returns the result of the operation you choose. 
+     */
+    public static double radiansToDegrees(double number1){
+        double result= Math.toDegrees(number1);
+       return result;
+    }
+    public static double degreesToRadians(double number1){
+       double result= Math.toRadians(number1);
+       return result;
+    }
      public static void main( String [] Args){
       Scanner reader = new Scanner (System.in);
       for(int x=0;x<=9;x++){
@@ -211,6 +244,7 @@ public class CalculadoraCientificaMejor{
       boolean firtsTime =true;
       int basicoperation;
       int operationConvertion;
+      int operationConvertionRG;
       String binarynumber;
       int decimal;
       int position = 0;
@@ -224,10 +258,10 @@ public class CalculadoraCientificaMejor{
         do{
          System.out.println ("what operation you would like to use; if you would like to finish enter number -1\n"+ 
          "1. sum \n" +
-		  "2. subtration\n" +
-		 "3. division\n" +
-		 "4. multiplication\n" +
-		 "5. module\n" +
+		   "2. subtration\n" +
+		   "3. division\n" +
+		   "4. multiplication\n" +
+		   "5. module\n" +
          "6. empowerment\n" +
          "7. root\n" +
          "8. log10\n" + 
@@ -237,7 +271,8 @@ public class CalculadoraCientificaMejor{
          "12. sin\n" +
          "13. cos\n" +
          "14. tan\n" +
-         "15. historyResults\n");
+         "15. historyResults\n" +
+         "16. radians and degrees\n" );
 
     
          basicoperation = reader.nextInt();
@@ -320,6 +355,7 @@ public class CalculadoraCientificaMejor{
             case 14:
             result= tan(number1);
             break;
+
             case 15:
             System.out.println("Por favor selecione el numero del historial ");
             System.out.println("historial 1 " + last10Values[0]+"\n");
@@ -343,8 +379,24 @@ public class CalculadoraCientificaMejor{
                   break;
                }
             }
-
             break;
+
+            case 16:
+            System.out.println("plase select the convertion you would like to use:\n 1.degreesToRadians\n 2.radiansToDegrees");
+            operationConvertionRG= reader.nextInt();
+            switch(operationConvertionRG){
+
+               case 1:
+               result= degreesToRadians(number1);
+               break;
+
+               case 2:
+               result= radiansToDegrees(number1);
+               break;
+            }
+
+            
+            
 
             default:
                 break;
